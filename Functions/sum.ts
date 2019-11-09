@@ -1,14 +1,16 @@
 // Write a function called `sum` that returns the sum of numbers from zero to the given parameter
 
-let sumOfNumber = 3;
+function findSum(myNumber) {
 
-function sum (a:number) {
-    for(let i = 0; i <= a; i++){
-        
+    let result = 0;
+
+    for(let i = 0; i <= myNumber; i++) {
+      result = result + i;
     }
-    return a;
-}
 
-let totalSum = sum(sumOfNumber)
+    return result
+  }
+  
+let myNumber = 5;
 
-console.log(totalSum);
+console.log(findSum(myNumber));
