@@ -3,8 +3,20 @@
 
 let ai = [3, 4, 5, 6, 7];
 
-for (let i = 0; i < ai.length; i++){
-    let indexValue = [ai[i]];
-};
+let myNumber = ai[4];
 
-if (indexValue)
+function findSum(c: number) {
+
+    let result = ai[0];
+
+    for(let i = 0; i <= ai[4]; i++) {
+      result = result + i;
+      return result;
+    }
+
+    
+    return result;
+  }
+  
+findSum(ai[4])
+console.log(findSum(ai[4]));
