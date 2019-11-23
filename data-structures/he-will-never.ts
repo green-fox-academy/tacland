@@ -18,7 +18,7 @@ let hashmap = {
 };
 
 function decoder (a:string, b:number[], c:object){
-    for(let i = 0; i < 16; i++){
+    for(let i = 0; i < b.length-1; i++){
         a = a.concat(c[b[i]])
     }
     return a
