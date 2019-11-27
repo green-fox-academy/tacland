@@ -20,23 +20,26 @@ printall(values, keys)
 
 delete object["978-1-60309-444-3"]
 
-console.log(object)
-
-function deleteByValue(a: string[], b:string, c:object) {
-    for ( let i = 0; i < a.length; i++){
-        if(a[i] === b) {
-            delete object[i]
-            console.log('if statement ran')
-        }
-    }
+function deletePro(keys, toBeDeleted, object) {
+    keys.forEach(key => {
+        if (object[key] === toBeDeleted)
+            delete object[key]
+    })
 }
 
-deleteByValue(values, "The Lab", object)
+deletePro(keys, "The Lab", object)
 
-console.log(values)
-console.log(object)
+object["978-1-60309-450-4"] = "They Called Us Enemy";
+object["978-1-60309-453-5"] = "Why Did We Trust Him?";
 
+function printIf(object, searchForThis) {
+    if(object.hasOwnProperty(searchForThis) === true){
+            console.log("the object contains a value for key 478-0-61159-424-8 and it is: " + object[searchForThis])
+        } else {
+            console.log("there is no value with key 478-0-61159-424-8")
+        }
+}
 
+printIf(object, "978-1-60309-452-8")
 
-//console.log(object)
-
+console.log(object["978-1-60309-453-5"])
