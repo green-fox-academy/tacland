@@ -22,10 +22,27 @@ const phoneBook = {
 "Brooke P. Askew":	"307-687-2982",
 }
 
-function findPhoneNumber(name: string){
+function findPhoneNumber(searchThis: object, name: string){
 console.log(name + "'s Phone Number is: " + phoneBook[name])
 }
 
-findPhoneNumber("John K. Miller")
+findPhoneNumber(phoneBook, "John K. Miller")
 
-console.log()
+function findName(searchThis:object, phoneNumber: string) {
+    let nameArray = Object.keys(searchThis)  
+    let numberArray = Object.values(searchThis)  
+    console.log("The phone number's owner is " + nameArray[numberArray.indexOf(phoneNumber)])
+}
+
+findName(phoneBook, "307-687-2982")
+
+function doesItExist (searchThis: object, name:string) {
+    let nameArray = Object.keys(searchThis)  
+    if (nameArray.indexOf(name) > -1){
+        console.log("The name " + name + " has a number assigned to it")
+    } else {
+        console.log("There is now phone number assigned to the name " + name)
+    }
+}
+
+doesItExist(phoneBook, "Chris E. Myers")
