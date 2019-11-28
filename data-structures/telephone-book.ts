@@ -38,7 +38,7 @@ findName(phoneBook, "307-687-2982")
 
 function doesItExist (searchThis: object, name:string) {
     let nameArray = Object.keys(searchThis)  
-    if (nameArray.indexOf(name) > -1){
+    if (nameArray.indexOf(name) > - 1) {
         console.log("The name " + name + " has a number assigned to it")
     } else {
         console.log("There is now phone number assigned to the name " + name)
