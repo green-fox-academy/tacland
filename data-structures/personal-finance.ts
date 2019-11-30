@@ -10,9 +10,9 @@
 
 const spending = [500, 1000, 1250, 175, 800, 120];
 
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
+const sumReducer = (accumulator, currentValue) => accumulator + currentValue;
 
-console.log("We spent: " + spending.reduce(reducer));
+console.log("We spent: " + spending.reduce(sumReducer));
 
 function maxMinExpense (arrayname: number[]) {
     function descendingSort(a:number, b:number) {
@@ -24,4 +24,4 @@ function maxMinExpense (arrayname: number[]) {
 
 maxMinExpense(spending)
 
-console.log("The average spend is " + (spending.reduce(reducer))/spending.length)
+console.log("The average spend is " + (spending.reduce(sumReducer))/spending.length)
