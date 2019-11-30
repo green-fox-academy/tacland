@@ -7,10 +7,9 @@
 const fs = require('fs');
 
 try {
-    let fileContent:string = fs.readFileSync('./my-file.txt', 'utf-8');
     let myName = "Tomi"
     fs.writeFileSync('./my-file.txt', myName)
-    console.log(fileContent)
+    console.log(fs.readFileSync('./my-file.txt', "utf-8"))
 }
 
 catch(err){
