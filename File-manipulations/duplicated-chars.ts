@@ -15,6 +15,6 @@ for(let i = 0; i < splitByLine.length - 1; i++){
     newArray = newArray.concat('\n')
 }
 
-console.log(newArray)
+fs.writeFileSync('./assets/duplicated-chars.txt', newArray)
 
 export{}
