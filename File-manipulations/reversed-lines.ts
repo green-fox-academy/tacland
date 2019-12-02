@@ -27,3 +27,5 @@ for(let i = 0; i < splitByLine.length - 1; i++){
 }
 
 fs.writeFileSync('./assets/reversed-lines.txt', newArray)
+
+export{}
