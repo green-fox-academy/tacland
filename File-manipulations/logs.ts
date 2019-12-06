@@ -41,20 +41,22 @@ console.log(findByIp (fileContent, '57.20.27.67'));
 let getCounter = 0;
 let postCounter = 0
 
-function ratio (searchThisArray, IP, compareThis, toThis) {
+function ratio (searchThisArray, compareThis, toThis) {
 
     let splitBySpace = searchThisArray.split(' '||'\n'||'/');
 
-    if (splitBySpace.indexOf(compareThis) > - 1) {
-        getCounter = getCounter + 1;
-    }
-    if (splitBySpace.indexOf(toThis) > - 1) {
-        postCounter = postCounter + 1;
+    for (let i = 0; i < splitBySpace.length - 1; i++){
+
+        if (splitBySpace[i] === compareThis) {
+            getCounter = getCounter + 1;
+        }
+        if (splitBySpace[i] === toThis) {
+            postCounter = postCounter + 1;
+        }
     }
 }
-ratio(fileContent, '57.20.27.67', 'GET', 'POST')
+ratio(fileContent, 'GET', 'POST')
 
-console.log('getCounter = ' + getCounter + 'PostCounter = ' + postCounter);
-
+console.log('number of times GET was used = ' + getCounter + '; ' + 'number of times POST was used = ' + postCounter + '; ' + 'Request Ratio = ' + getCounter/postCounter);
 
 export{}
