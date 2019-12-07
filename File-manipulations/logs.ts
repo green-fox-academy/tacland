@@ -11,6 +11,7 @@ let fileContent = fs.readFileSync('./assets/log.txt', 'utf-8');
 function findByIp (searchThisArray, IP) {
 
     let splitBySpace = searchThisArray.split(' '||'\n'||'/');
+    //regex
 
     if (splitBySpace.indexOf(IP) > - 1) {
         return (
@@ -23,7 +24,8 @@ function findByIp (searchThisArray, IP) {
         + splitBySpace[splitBySpace.indexOf(IP)- 4]
         + ' ' 
         + splitBySpace[splitBySpace.indexOf(IP)- 3]
-        + ' ' + splitBySpace[splitBySpace.indexOf(IP)-2] 
+        + ' ' 
+        + splitBySpace[splitBySpace.indexOf(IP)-2] 
         + splitBySpace[splitBySpace.indexOf(IP)-1] 
         + splitBySpace[splitBySpace.indexOf(IP)]
         + splitBySpace[splitBySpace.indexOf(IP)+ 1]
