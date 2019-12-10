@@ -24,6 +24,6 @@ function advancedDraw (size:number, color:string) {
 }
 
 for(let i = 0; i<=600; i++) {
-    let color = `rgb(${i/3},${i},${i/2})`;
+    let color = `rgb(${i},${i/3},${i/2})`;
     advancedDraw(i, color);
 }
