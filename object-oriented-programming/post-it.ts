@@ -13,12 +13,12 @@ class PostIt {
     text: string;
     static instances: PostIt[] = [];
 
-constructor(bColor: string, content: string, color: string) {
-    this.backgroundColor = bColor;
-    this.text = content;
-    this.textColor = color;
-    PostIt.instances.push(this);
-  }
+    constructor(_backgroundColor: string, _text: string, _textColor: string) {
+        this.backgroundColor = _backgroundColor;
+        this.text = _text;
+        this.textColor = _textColor;
+        PostIt.instances.push(this);
+    }
 }
 
 const orange = new PostIt ('orange', 'blue', 'Idea 1')
