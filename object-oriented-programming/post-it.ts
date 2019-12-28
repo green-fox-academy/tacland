@@ -24,4 +24,3 @@ class PostIt {
 const orange = new PostIt ('orange', 'blue', 'Idea 1')
 const pink = new PostIt ('pink', 'black', 'awesome')
 const yellow = new PostIt ('yellow', 'green', 'Superb!')
-console.log(orange, pink, yellow)
