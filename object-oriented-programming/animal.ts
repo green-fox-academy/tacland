@@ -7,7 +7,7 @@
 // Every animal can play() which increases both by one
 
 class Animal {
-    hunger_value: number = 50; //50 may have to be placed elsewhere
+    hunger_value: number = 50;
     thirst_value: number = 50;
     
     public eat(): void {
