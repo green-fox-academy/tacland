@@ -9,7 +9,7 @@ import { COPYFILE_FICLONE_FORCE } from "constants";
 
 class Sharpie {
     color: string;
-    width: number;
+    width: any;
     inkAmount = 100;
 
     constructor(_color: string, _width: number) {
