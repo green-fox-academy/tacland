@@ -1,4 +1,3 @@
-Learn more or give us feedback
 import { Pokemon } from './Pokemon'
 
 let pokemonOfAsh: Pokemon[] = initializePokemon();
