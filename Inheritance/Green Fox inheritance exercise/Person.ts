@@ -10,11 +10,10 @@ export class Person {
     }
 
     introduce(): void {
-        console.log('\'Hi, I\'m ' + this.name + ', a ' + this.age + ' year old ' + this.gender + '.\'')
+        console.log('\'Hi, I\'m ' + this.name + ', a ' + this.age + ' year old ' + this.gender + '.\'');
     }
 
     getGoal(): void{
-        console.log('\'My goal is: Live for the moment!\'')
+        console.log('\'My goal is: Live for the moment!\'');
     }
 }
-

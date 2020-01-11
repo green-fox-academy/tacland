@@ -11,11 +11,13 @@ export class Student extends Person {
     }
     
     getGoal(): void{
-        console.log('\'My goal is: Be a junior software developer.\'')
+        console.log('\'My goal is: Be a junior software developer.\'');
     }
+
     introduce(): void{
-        console.log('\'Hi, I\'m ' + this.name + ', a ' + this.age + ' year old ' + this.gender + ' from ' + this.previousOrganization + ' who skipped ' + this.skippedDays + ' days of course already.\'')
+        console.log('\'Hi, I\'m ' + this.name + ', a ' + this.age + ' year old ' + this.gender + ' from ' + this.previousOrganization + ' who skipped ' + this.skippedDays + ' days of course already.\'');
     }
+
     skipDays(numberOfDays:number):void {
         this.skippedDays += numberOfDays;
     }
