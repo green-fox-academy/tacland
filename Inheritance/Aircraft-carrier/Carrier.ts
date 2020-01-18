@@ -1,17 +1,17 @@
 import { Aircrafts } from "./Aircrafts";
 
 export class Carrier {
+    name: string;
     hp: number;
     aircraftCount: number
     ammoStorage: number;
-    totalDamage: number;
     aircraftList: Aircrafts [];
 
-    constructor() {
+    constructor(name: string) {
+        this.name = name;
         this.hp = 1000
         this.aircraftCount = 0;
         this.ammoStorage = 2300
-        this.totalDamage = 0;
         this.aircraftList = [];
     }
 
@@ -20,22 +20,29 @@ export class Carrier {
         this.aircraftCount++;
     }
 
-    fill(aircraft: Aircrafts) {
-        // let ammoLevel = this.ammoStorage
+    fill() {
+        for( let i = 0; i < this.aircraftCount; i++) {
+            if(this.aircraftList[i].needsAmmo()) { //here we are accessing the isThirsty() method from Plant file
+                this.ammoStorage -= this.aircraftList[i].fill()
+            }
+        }
+    }
+
+    private totalDamage(){}
+
+    fight() {
+        return this.aircraftList[0].ammo
         // for( let i = 0; i < this.aircraftCount; i++) {
-        //     if(this.aircraftList[i].needsAmmo()) { //here we are accessing the isThirsty() method from Plant file
-        //         this.aircraftList[i].refill()
-        //     }
+        //     this.aircraftList[i][0]
         // }
-        // let ammoPortion = 0;
     }
 
-    fight(carrier: Carrier) {
-        //fire all ammo
-        //subtract all damage 
-    }
+    getStatus()/*: string*/{
+        // let output = '';
 
-    getStatus(){
+        // this.aircraftList.forEach((aircraftCount: number) => {
+        //     output += this.aircraftList.toString() + '\n'
+        // });
         // It should return a string about itself and all of its aircrafts' statuses in the following format:
 
         // HP: 5000, Aircraft count: 5, Ammo Storage: 2300, Total damage: 2280
@@ -46,5 +53,6 @@ export class Carrier {
         // Type F16, Ammo: 8, Base Damage: 30, All Damage: 240
         // Type F16, Ammo: 8, Base Damage: 30, All Damage: 240
         // If the health points are 0 then it should return: It's dead Jim :(
+        //return output
     }
 }
