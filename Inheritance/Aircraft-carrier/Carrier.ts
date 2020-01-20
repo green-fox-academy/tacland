@@ -9,7 +9,7 @@ export class Carrier {
 
     constructor(name: string) {
         this.name = name;
-        this.hp = 1000
+        this.hp = 5000
         this.aircraftCount = 0;
         this.ammoStorage = 2300
         this.aircraftList = [];
@@ -22,37 +22,46 @@ export class Carrier {
 
     fill() {
         for( let i = 0; i < this.aircraftCount; i++) {
-            if(this.aircraftList[i].needsAmmo()) { //here we are accessing the isThirsty() method from Plant file
-                this.ammoStorage -= this.aircraftList[i].fill()
+            if(this.aircraftList[i].needsAmmo()) { 
+                this.ammoStorage -= this.aircraftList[i].refill()
             }
         }
     }
 
-    private totalDamage(){}
+    fight(enemyName: Carrier) {
+        let firePower = 0;
 
-    fight() {
-        return this.aircraftList[0].ammo
-        // for( let i = 0; i < this.aircraftCount; i++) {
-        //     this.aircraftList[i][0]
-        // }
+        for( let i = 0; i < this.aircraftCount; i++) {
+            firePower += this.aircraftList[i].ammo * this.aircraftList[i].baseDamage
+        };
+
+        enemyName.hp -= firePower;
+
+        if (enemyName.hp <0) {
+            enemyName.hp = 0;
+            console.log(`Enemy down.\n`)
+        } else {
+            console.log(`It's a hit! The carrier named ${enemyName.name} now has ${enemyName.hp} HP left.\n`)
+        }
     }
 
-    getStatus()/*: string*/{
-        // let output = '';
+    getStatus(): void{
+        let output = '';
+        let firePower = 0;
 
-        // this.aircraftList.forEach((aircraftCount: number) => {
-        //     output += this.aircraftList.toString() + '\n'
-        // });
-        // It should return a string about itself and all of its aircrafts' statuses in the following format:
+        for( let i = 0; i < this.aircraftCount; i++) {
+            firePower += this.aircraftList[i].ammo * this.aircraftList[i].baseDamage
+        };
 
-        // HP: 5000, Aircraft count: 5, Ammo Storage: 2300, Total damage: 2280
-        // Aircrafts:
-        // Type F35, Ammo: 12, Base Damage: 50, All Damage: 600
-        // Type F35, Ammo: 12, Base Damage: 50, All Damage: 600
-        // Type F35, Ammo: 12, Base Damage: 50, All Damage: 600
-        // Type F16, Ammo: 8, Base Damage: 30, All Damage: 240
-        // Type F16, Ammo: 8, Base Damage: 30, All Damage: 240
-        // If the health points are 0 then it should return: It's dead Jim :(
-        //return output
-    }
+        output += `HP: ${this.hp}, Aircraft count: ${this.aircraftCount}, Ammo Storage: ${this.ammoStorage}, Total damage: ${firePower} \n\n`;
+
+        for (let i = 0; i <= this.aircraftList.length - 1; i++) {
+            output += `Type: ${this.aircraftList[i].type}, Ammo: ${this.aircraftList[i].ammo}, Base Damage: ${this.aircraftList[i].baseDamage}, All Damage ${this.aircraftList[i].ammo * this.aircraftList[i].baseDamage} \n`
+        };
+
+        if (this.hp <= 0) {
+            output += `It's is dead Jim :(\n`
+        };
+        console.log(output);
+    };
 }

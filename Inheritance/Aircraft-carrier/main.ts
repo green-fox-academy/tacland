@@ -22,8 +22,14 @@ enemy.add(new F35())
 enemy.add(new F16())
 enemy.add(new F16())
 
-console.log(enemy)
-
 enemy.fill();
 
-console.log(me.fight())
+console.log(enemy)
+
+me.fight(enemy)
+me.fight(enemy)
+me.fight(enemy)
+
+enemy.getStatus()
+
+

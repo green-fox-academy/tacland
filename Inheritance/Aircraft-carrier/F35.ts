@@ -2,6 +2,6 @@ import { Aircrafts } from "./Aircrafts";
 
 export class F35 extends Aircrafts{
     constructor(){
-        super(12, 50)
+        super(true, 'F35', 12, 50)
     }
 }
