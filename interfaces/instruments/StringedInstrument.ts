@@ -9,4 +9,7 @@ export abstract class StringedInstrument extends Instrument {
     }
 
     abstract sound();
+    play(){
+        console.log(`${this.name}, a ${this.numberOfStrings}-stringed instrument that goes ${this.sound()}`)
+    }
 }
