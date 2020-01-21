@@ -10,11 +10,7 @@ me.add(new F35())
 me.add(new F16())
 me.add(new F16())
 
-console.log(me)
-
 me.fill();
-
-console.log(me)
 
 let enemy = new Carrier('Enemy');
 
@@ -23,8 +19,6 @@ enemy.add(new F16())
 enemy.add(new F16())
 
 enemy.fill();
-
-console.log(enemy)
 
 me.fight(enemy)
 me.fight(enemy)

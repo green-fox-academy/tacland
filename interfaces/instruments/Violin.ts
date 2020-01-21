@@ -1,6 +1,11 @@
 import {StringedInstrument} from "./StringedInstrument"
 
 export class Violin extends StringedInstrument{
-    play() {}
-    sound() {}
+    constructor(numberOfStrings: number = 4, name: string = 'Violin'){
+        super(name, numberOfStrings)
+    }
+
+    sound() {
+        return 'Screech'
+    }
 }

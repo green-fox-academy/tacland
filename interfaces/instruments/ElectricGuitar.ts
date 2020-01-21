@@ -1,19 +1,14 @@
 import {StringedInstrument} from "./StringedInstrument"
 
 export class ElectricGuitar extends StringedInstrument{
-    name = ''
-    numberOfStrings: number;
 
-    constructor() {
-        super(name)
-        this.name = name
+    constructor(numberOfStrings: number = 6, name: string = "Electric Guitar"){
+        super(name, numberOfStrings)
     }
 
-    sound(){
-        console.log("Electric Guitar, a 6-stringed instrument that goes Twang")
+    sound() {
+        return "Twangg"
     }
-    play() {
-        this.sound()
-    }
-
 }
+
+//
