@@ -10,7 +10,11 @@ export abstract class Animal {
         this.breedType = breedType;
     }
 
-    abstract getName()
+    getName() {
+        return this.name
+    }
 
-    abstract breed() 
+    breed() {
+        return this.breedType
+    }
 }
